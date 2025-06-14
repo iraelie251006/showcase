@@ -8,7 +8,8 @@ import { useState } from "react";
 
 import { IoCopyOutline } from "react-icons/io5";
 import dynamic from "next/dynamic";
-import Lottie from "lottie-react";
+import Lottie from "react-lottie";
+
 const MagicButton = dynamic(() => import('./MagicButton'), { ssr: false });
 
 
