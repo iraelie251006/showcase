@@ -113,21 +113,18 @@ export const BentoGridItem = ({
             <div className="font-sans font-bold text-lg lg:text-3xl max-w-96 z-10">
               {title}
             </div>
-          </div> 
-            {id === 2 && (
-            <img src="/grid.svg" alt="gridbg" className={'object-cover object-center w-full h-full'}/>
-            )}
+          </div>         
             {id === 3 && (
             <div className="flex gap-1 lg:gap-2 w-fit absolute -right-3 lg:-right-2">
               <div className="flex flex-col gap-3 lg:gap-7">
-                {['React.js', 'Next.js', 'Typescript'].map((item) => (
+                {['Next.js', 'Typescript', 'Postgresql'].map((item) => (
                   <span key={item} className="py-2 lg:py-5 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]">{item}</span>
                 ))}
                 <span className="py-4 px-3 rounded-lg text-center bg-[#10132e]"/>
               </div>
               <div className="flex flex-col gap-3 lg:gap-7">
                 <span className="py-4 px-3 rounded-lg text-center bg-[#10132a]"/>
-                {['React Native', 'Mongodb', 'MySql'].map((item) => (
+                {['Python', 'Express.js', 'MongoDB'].map((item) => (
                   <span key={item} className="py-2 lg:py-5 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]">{item}</span>
                 ))}
                 

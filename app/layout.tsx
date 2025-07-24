@@ -19,7 +19,6 @@ export const metadata: Metadata = {
   description: "I'm Niyubwayo Irakoze Elie, a passionate Software Engineer from Rwanda, skilled in building scalable web applications using modern technologies like Next.js, Express.js, TypeScript, and PostgreSQL.",
 };
 
-// add opengraph metadata
 export const openGraph = {
   title: "Niyubwayo Irakoze Elie | Software Engineer",
   description: "I'm Niyubwayo Irakoze Elie, a passionate Software Engineer from Rwanda, skilled in building scalable web applications using modern technologies like Next.js, Express.js, TypeScript, and PostgreSQL.",
