@@ -29,7 +29,7 @@ const Hero = () => {
 
                 <TextGenerateEffect 
                  words='Transforming Concepts into Seamless User Experiences'
-                 className='text-center text-[33px] md:text-5xl lg:text-6xl'
+                 className='text-center text-[32px] md:text-5xl lg:text-6xl'
                 />
                 <p className='text-center md:tracking-wider mb-4 text-[17px] md:text-lg lg:text-2xl'>
                     Hi 👋, I&apos;m Elie, a Software Engineer based in Rwanda 🇷🇼
