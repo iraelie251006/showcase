@@ -2,6 +2,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { BuyMeCoffee } from "@/components/BuyMeCoffee";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -82,6 +83,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             {children}
+            <BuyMeCoffee />
           </ThemeProvider>
       </body>
     </html>
