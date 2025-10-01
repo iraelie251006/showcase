@@ -140,15 +140,15 @@ export const navItems = [
   export const workExperience = [
     {
       id: 1,
-      title: "Backend Engineer Intern",
-      desc: "Assisted in the development of a web-based platform using Express.js, ensuring secure, maintainable and scaleble systems.",
+      title: "Cyber Security Intern",
+      desc: "Assisted in the providing security for systems and applications, and preventing cyber attacks on time.",
       className: "md:col-span-2",
       thumbnail: "/exp1.svg",
     },
     {
       id: 2,
-      title: "Mobile App Dev",
-      desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
+      title: "Backend Engineer",
+      desc: "Assisted in the development of a web-based platform using Express.js, Spring Boot, ensuring secure, maintainable and scaleble systems.",
       className: "md:col-span-2", // change to md:col-span-2
       thumbnail: "/exp2.svg",
     },
