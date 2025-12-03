@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function TechnologiesSection() {
   const skillGroups = [
     {
@@ -56,12 +58,12 @@ export default function TechnologiesSection() {
                 key={skillIndex}
                 className="flex flex-col gap-4 justify-center items-center text-center border border-gray-200 dark:border-gray-700 rounded-lg p-2 size-24 sm:size-24 text-sm sm:text-base bg-white/50 sm:bg-sky-50 dark:bg-slate-800/20 dark:sm:bg-slate-800/30"
               >
-                <img
+                <Image
                   draggable="false"
                   alt={`${skill.name} icon`}
                   loading="lazy"
-                  width="30"
-                  height="30"
+                  width={30}
+                  height={30}
                   decoding="async"
                   className="dark:opacity-80"
                   src={skill.icon}
