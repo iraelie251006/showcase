@@ -92,7 +92,7 @@ export const navItems = [
       quote:
         "As the Co-founder and CEO of VOLTSOL GLOBAL Ltd, I am very satisfied with his performance and the final outcome of our website. I highly recommend Elie to any company or business looking for a reliable and skilled professional to create or manage their website. I strongly encourage others to give him the opportunity to work with them.",
       name: "Harerimana Thierry",
-      image: "/profile.svg",
+      image: "/thierry.jpeg",
       title: "CEO of Voltsol Global",
     },
     {
