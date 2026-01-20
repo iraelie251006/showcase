@@ -90,7 +90,7 @@ export const navItems = [
   export const testimonials = [
     {
       quote:
-        "Collaborating with Elie was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Elie's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
+        "As the Co-founder and CEO of VOLTSOL GLOBAL Ltd, I am very satisfied with his performance and the final outcome of our website. I highly recommend Elie to any company or business looking for a reliable and skilled professional to create or manage their website. I strongly encourage others to give him the opportunity to work with them.",
       name: "Harerimana Thierry",
       image: "/profile.svg",
       title: "Director of AlphaStream Technologies",
