@@ -3,6 +3,8 @@ import { socialMedia } from "@/data"
 import DefaultDemo from "./Contact"
 
 const Footer = () => {
+    const year: number = new Date().getFullYear();
+
   return (
     <footer className="w-full pb-10 mb-[50px]" id="contact">
         <div className="flex flex-col items-center">
@@ -15,7 +17,7 @@ const Footer = () => {
             </div>
         </div>
         <div className="flex mt-16 lg:flex-row flex-col justify-between items-center">
-            <p className="md:text-base text-sm font-light">Copyright © 2025 Elie, All Rights Reserved.</p>
+            <p className="md:text-base text-sm font-light">Copyright © {year} Elie, All Rights Reserved.</p>
             <div className="flex items-center md:gap-3 gap-6">
                 {socialMedia.map(({id, img, link, className}) => (
                     <div key={id} className={`w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-50 bg-black-200 rounded-lg border border-black-300 max-lg:mt-5 ${className}`}>
