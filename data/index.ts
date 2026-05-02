@@ -79,11 +79,11 @@ export const navItems = [
     },
     {  
       id: 2,
-      title: "Linkreative",
-      des: "Linkreative is platform for Rwanda artist to showcase their work and connect with potential buyers.",
-      img: "/linkreative.jpeg",
+      title: "NetSentry",
+      des: "Real-time domain security analyzer deployed on AWS with Kubernetes, load balancing, and CI/CD.",
+      img: "/netsentry.png",
       iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
-      link: "https://linkreative.netlify.app",
+      link: "https://netsentry.iraelie.tech",
     },
   ];
   
@@ -101,39 +101,6 @@ export const navItems = [
       name: "SIBONIYO Theohile",
       image: "/theo.jpeg",
       title: "Managing Director of Landmark Logistics Ltd",
-    },
-  ];
-  
-  export const companies = [
-    {
-      id: 1,
-      name: "cloudinary",
-      img: "/cloud.svg",
-      nameImg: "/cloudName.svg",
-    },
-    {
-      id: 2,
-      name: "appwrite",
-      img: "/app.svg",
-      nameImg: "/appName.svg",
-    },
-    {
-      id: 3,
-      name: "HOSTINGER",
-      img: "/host.svg",
-      nameImg: "/hostName.svg",
-    },
-    {
-      id: 4,
-      name: "stream",
-      img: "/s.svg",
-      nameImg: "/streamName.svg",
-    },
-    {
-      id: 5,
-      name: "docker.",
-      img: "/dock.svg",
-      nameImg: "/dockerName.svg",
     },
   ];
   
