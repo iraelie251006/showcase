@@ -107,29 +107,29 @@ export const navItems = [
   export const workExperience = [
     {
       id: 1,
-      title: "Cyber Security Intern",
-      desc: "Assisted in the providing security for systems and applications, and preventing cyber attacks on time.",
+      title: "Security-Focused SRE Practice",
+      desc: "Identified medium-to-critical vulnerabilities in production systems at Irembo, applying shift-left security principles to reliability engineering workflows.",
       className: "md:col-span-2",
       thumbnail: "/exp1.svg",
     },
     {
       id: 2,
-      title: "Backend Engineer",
-      desc: "Assisted in the development of a web-based platform using Express.js, Spring Boot, ensuring secure, maintainable and scaleble systems.",
+      title: "Distributed Systems Engineering",
+      desc: "Designed and implemented scalable backend services using Spring Boot and Express.js, applying distributed systems patterns for shared state, load balancing, and fault tolerance.",
       className: "md:col-span-2", // change to md:col-span-2
       thumbnail: "/exp2.svg",
     },
     {
       id: 3,
-      title: "Software Engineering Project",
-      desc: "Developed fullstack web app for a dev community, from initial concept to deployment on vercel.",
+      title: "DevOps Infrastructure",
+      desc: "Built and operated a multi-node environment (Web01, Web02, Lb01) with HAProxy, Nginx, and PM2. Simulating production-grade deployment pipelines and load balancing at scale.",
       className: "md:col-span-2", // change to md:col-span-2
       thumbnail: "/exp3.svg",
     },
     {
       id: 4,
-      title: "Web Developer",
-      desc: "Developed and maintained user-facing features using modern frontend and backend technologies.",
+      title: "Container Orchestration at Scale",
+      desc: "Deployed and managed containerized workloads using Kubernetes, implementing auto-scaling, rolling deployments, and self-healing infrastructure patterns used in hyperscale environments.",
       className: "md:col-span-2",
       thumbnail: "/exp4.svg",
     },
