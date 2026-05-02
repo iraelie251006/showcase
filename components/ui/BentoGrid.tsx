@@ -53,7 +53,7 @@ export const BentoGridItem = ({
 }) => {
   const [copied, setCopied] = useState(false);
   const options={
-    loop: copied,
+    loop: true,
     autoplay: copied,
     animationData,
     rendererSettings: {
@@ -61,10 +61,15 @@ export const BentoGridItem = ({
     }
   }
 
-  const handleCopy = () => {
+  const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+
+  const handleCopy = async () => {
     navigator.clipboard.writeText("niyubwayoiraelie5777@gmail.com");
     setCopied(true);
+    await sleep(2000);
+    setCopied(false);
   }
+
   return (
     <div
       className={cn(
