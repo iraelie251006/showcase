@@ -3,19 +3,13 @@ import Image from "next/image";
 export default function TechnologiesSection() {
   const skillGroups = [
     {
-      title: "Frontend",
+      title: "DevOps & Cloud",
       skills: [
-        { name: "React", icon: "/skills/react.svg" },
-        { name: "Next.js", icon: "/skills/nextjs.svg" },
-        { name: "TypeScript", icon: "/skills/typescript.svg" },
-        { name: "JavaScript", icon: "/skills/javascript.svg" }
-      ]
-    },
-    {
-      title: "Styling",
-      skills: [
-        { name: "HTML", icon: "/skills/html.svg" },
-        { name: "Tailwind CSS", icon: "/skills/tailwind-css.svg" }
+        { name: "AWS", icon: "/skills/aws.svg" },
+        { name: "Docker", icon: "/skills/docker.svg" },
+        { name: "Kubernetes", icon: "/skills/kubernetes.svg" },
+        { name: "Redis", icon: "/skills/redis.svg" },
+        { name: "Nginx", icon: "/skills/nginx.svg" }
       ]
     },
     {
@@ -23,32 +17,28 @@ export default function TechnologiesSection() {
       skills: [
         { name: "Spring Boot", icon: "/skills/spring-boot.svg" },
         { name: "Java", icon: "/skills/java.svg" },
-        { name: "Python", icon: "/skills/python.svg" }
-      ]
-    },
-    {
-      title: "Databases",
-      skills: [
+        { name: "Python", icon: "/skills/python.svg" },
         { name: "PostgreSQL", icon: "/skills/postgresql.svg" },
         { name: "MongoDB", icon: "/skills/mongodb.svg" },
         { name: "MySQL", icon: "/skills/mysql.svg" }
       ]
     },
     {
-      title: "DevOps & Cloud",
+      title: "Frontend",
       skills: [
-        { name: "AWS", icon: "/skills/aws.svg" },
-        { name: "Docker", icon: "/skills/docker.svg" },
-        { name: "Kubernetes", icon: "/skills/kubernetes.svg" }
+        { name: "React", icon: "/skills/react.svg" },
+        { name: "Next.js", icon: "/skills/nextjs.svg" },
+        { name: "TypeScript", icon: "/skills/typescript.svg" },
+        { name: "JavaScript", icon: "/skills/javascript.svg" }
       ]
     }
   ];
 
   return (
-    <div className="mx-auto max-w-sm md:max-w-full mt-10 gap-2 flex flex-wrap justify-center md:justify-start items-start">
+    <div className="mx-auto max-w-sm md:max-w-full mt-10 gap-10 flex flex-wrap justify-center items-start">
       {skillGroups.map((group, index) => (
         <div key={index} style={{ opacity: 1, transform: 'none' }}>
-          <h3 className="sr-only">{group.title}</h3>
+          <h3 className="flex justify-center">{group.title}</h3>
           <ul 
             className="border border-gray-200 dark:border-gray-700 p-2 rounded-2xl bg-transparent sm:bg-white/50 dark:sm:bg-slate-800/50 gap-2 flex flex-wrap max-w-[20.1rem] justify-center" 
             style={{ opacity: 1 }}

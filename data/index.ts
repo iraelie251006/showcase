@@ -145,7 +145,7 @@ export const navItems = [
     {
       id: 2,
       img: "/link.svg",
-      link: "https://www.linkedin.com/in/niyubwayo-irakoze-elie-14b003284/",
+      link: "https://www.linkedin.com/in/irakoze-elie/",
       className: "hover:opacity-100 opacity-75"
     },
   ];
