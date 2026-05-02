@@ -48,8 +48,8 @@ export const navItems = [
     },
     {
       id: 5,
-      title: "I build web apps that are fast, secure, and scalable.",
-      description: "I'm currently building Trackwise web app",
+      title: "I'm currently executing Cloud track.",
+      description: "I'm currently executing a structured 49-day AWS cloud engineering roadmap covering EC2, S3, Lambda, ECS/Fargate, CI/CD pipelines (CodePipeline + CloudWatch), Auto Scaling, and Infrastructure as Code (CloudFormation/CDK).",
       className: "md:col-span-2 md:row-span-2",
       imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
       titleClassName: "justify-center md:justify-start lg:justify-center",
