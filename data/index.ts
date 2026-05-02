@@ -69,21 +69,21 @@ export const navItems = [
   ];
   
   export const projects = [
-    {
+    {  
       id: 1,
+      title: "NetSentry",
+      des: "Real-time domain security analyzer deployed on AWS with Kubernetes, load balancing, and CI/CD.",
+      img: "/netsentry.png",
+      iconLists: ["/skills/aws.svg", "/skills/kubernetes.svg", "/skills/docker.svg", "/skills/nginx.svg", "/skills/redis.svg"],
+      link: "https://netsentry.iraelie.tech",
+    },
+    {
+      id: 2,
       title: "Devflow",
       des: "Devflow is a web application designed to streamline the workflow of developers, providing feature for finding jobs, collaboration, and code sharing.",
       img: "/devflow.jpeg",
       iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/fm.svg"],
       link: "https://devflow-blue.vercel.app",
-    },
-    {  
-      id: 2,
-      title: "NetSentry",
-      des: "Real-time domain security analyzer deployed on AWS with Kubernetes, load balancing, and CI/CD.",
-      img: "/netsentry.png",
-      iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
-      link: "https://netsentry.iraelie.tech",
     },
   ];
   
