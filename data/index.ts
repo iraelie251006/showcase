@@ -116,7 +116,7 @@ export const navItems = [
       id: 2,
       title: "Distributed Systems Engineering",
       desc: "Designed and implemented scalable backend services using Spring Boot and Express.js, applying distributed systems patterns for shared state, load balancing, and fault tolerance.",
-      className: "md:col-span-2", // change to md:col-span-2
+      className: "md:col-span-2",
       thumbnail: "/exp2.svg",
     },
     {
