@@ -29,12 +29,7 @@ export default function DefaultDemo() {
 							icon: MapPinIcon,
 							label: 'Address',
 							value: 'Kigali, CHIC',
-						},
-                        {
-							icon: PhoneIcon,
-							label: 'Phone',
-							value: '+250 728 449 408',
-						},
+						}
 					]}
 				>
 					<form action="" className="w-full space-y-4">
