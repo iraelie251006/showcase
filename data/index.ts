@@ -123,7 +123,7 @@ export const navItems = [
       id: 3,
       title: "DevOps Infrastructure",
       desc: "Built and operated a multi-node environment (Web01, Web02, Lb01) with HAProxy, Nginx, and PM2. Simulating production-grade deployment pipelines and load balancing at scale.",
-      className: "md:col-span-2", // change to md:col-span-2
+      className: "md:col-span-2",
       thumbnail: "/exp3.svg",
     },
     {
