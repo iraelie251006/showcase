@@ -13,7 +13,7 @@ export default function DefaultDemo() {
 			<div className="mx-auto max-w-5xl">
 				<ContactCard
 					title="Get in touch"
-					description="If you have any questions regarding our Services or need help, please fill out the form here. We do our best to respond within 1 business day."
+					description="Want to discuss a role, collaboration, or just talk engineering? I usually reply within 24 hours."
 					contactInfo={[
 						{
 							icon: MailIcon,
