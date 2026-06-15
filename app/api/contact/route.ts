@@ -1,8 +1,28 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { Ratelimit } from "@upstash/ratelimit";
+import { Redis } from "@upstash/redis";
 
 const TO_EMAIL = "technura7@gmail.com";
 const FROM_EMAIL = "Portfolio Contact <onboarding@resend.dev>";
+
+const ratelimit =
+  process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN
+    ? new Ratelimit({
+        redis: Redis.fromEnv(),
+        limiter: Ratelimit.slidingWindow(3, "1 h"),
+        analytics: true,
+        prefix: "contact",
+      })
+    : null;
+
+function getClientIp(req: Request): string {
+  const xff = req.headers.get("x-forwarded-for");
+  if (xff) return xff.split(",")[0].trim();
+  const realIp = req.headers.get("x-real-ip");
+  if (realIp) return realIp.trim();
+  return "anonymous";
+}
 
 export async function POST(req: Request) {
   const apiKey = process.env.RESEND_API_KEY;
@@ -11,6 +31,23 @@ export async function POST(req: Request) {
       { error: "Email service is not configured." },
       { status: 500 }
     );
+  }
+
+  if (ratelimit) {
+    const ip = getClientIp(req);
+    const { success, reset } = await ratelimit.limit(ip);
+    if (!success) {
+      const retryAfterSec = Math.max(1, Math.ceil((reset - Date.now()) / 1000));
+      const retryAfterMin = Math.ceil(retryAfterSec / 60);
+      return NextResponse.json(
+        {
+          error: `Too many messages. Please try again in ${retryAfterMin} minute${
+            retryAfterMin === 1 ? "" : "s"
+          }.`,
+        },
+        { status: 429, headers: { "Retry-After": String(retryAfterSec) } }
+      );
+    }
   }
 
   let body: unknown;
