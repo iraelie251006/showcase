@@ -3,7 +3,7 @@ import { Resend } from "resend";
 import { Ratelimit } from "@upstash/ratelimit";
 import { Redis } from "@upstash/redis";
 
-const TO_EMAIL = "technura7@gmail.com";
+const TO_EMAIL = "niyubwayoiraelie5777@gmail.com";
 const FROM_EMAIL = "Portfolio Contact <onboarding@resend.dev>";
 
 const ratelimit =
@@ -72,7 +72,7 @@ export async function POST(req: Request) {
 
   const resend = new Resend(apiKey);
 
-  const { error } = await resend.emails.send({
+  const { data, error } = await resend.emails.send({
     from: FROM_EMAIL,
     to: TO_EMAIL,
     replyTo: email,
@@ -90,8 +90,14 @@ export async function POST(req: Request) {
   });
 
   if (error) {
-    return NextResponse.json({ error: "Failed to send email." }, { status: 502 });
+    console.error("[contact] Resend error:", error);
+    const detail =
+      process.env.NODE_ENV === "production"
+        ? "Failed to send email."
+        : `Resend: ${error.name ?? "error"} — ${error.message ?? "unknown"}`;
+    return NextResponse.json({ error: detail }, { status: 502 });
   }
 
+  console.log("[contact] sent:", data?.id);
   return NextResponse.json({ ok: true });
 }
