@@ -49,8 +49,8 @@ export const navItems = [
     },
     {
       id: 5,
-      title: "I'm currently executing Cloud track.",
-      description: "I'm currently executing a structured 49-day AWS cloud engineering roadmap covering EC2, S3, Lambda, ECS/Fargate, CI/CD pipelines (CodePipeline + CloudWatch), Auto Scaling, and Infrastructure as Code (CloudFormation/CDK).",
+      title: "Scaling systems with observability.",
+      description: "Focused on production-grade scalability and reliability. Designing fault-tolerant architectures on AWS (EC2, Lambda, ECS/Fargate) and refining performance and uptime with Prometheus, Grafana, and Loki across the deployment pipeline.",
       className: "md:col-span-2 md:row-span-2",
       imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
       titleClassName: "justify-center md:justify-start lg:justify-center",
