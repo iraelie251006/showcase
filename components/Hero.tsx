@@ -24,11 +24,11 @@ const Hero = () => {
 
         <div className='flex justify-center relative my-20 z-10'>
             <div className='max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center'>
-                <h2 className='uppercase tracking-widest text-xs text-center text-blue-100 max-w-80'>Continuous. Integration. Deployment</h2>
+                <h2 className='heading-display text-xs text-center text-blue-100 max-w-80'>Continuous · Integration · Deployment</h2>
 
-                <TextGenerateEffect 
+                <TextGenerateEffect
                  words='Backend Engineer building production infrastructure on AWS'
-                 className='text-center text-[32px] md:text-5xl lg:text-6xl'
+                 className='text-center text-[32px] md:text-5xl lg:text-6xl font-display tracking-tight'
                 />
                 <p className='text-center md:tracking-wider mb-4 text-[17px] md:text-lg lg:text-2xl'>
                     Hi 👋, I&apos;m Elie, a Software Engineer based in Rwanda 🇷🇼
