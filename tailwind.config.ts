@@ -29,6 +29,9 @@ const config = {
   		}
   	},
   	extend: {
+  		fontFamily: {
+  			display: ['var(--font-display)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+  		},
   		colors: {
   			black: {
   				'100': '#000319',

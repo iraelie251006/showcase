@@ -88,6 +88,9 @@
   body {
     @apply bg-background text-foreground;
   }
+  .dark body {
+    @apply bg-black-100;
+  }
   button {
     @apply active:outline-none;
   }
@@ -95,11 +98,27 @@
 
 @layer utilities {
   .heading {
-    @apply font-bold text-4xl md:text-5xl text-center;
+    @apply font-display font-semibold text-4xl md:text-5xl text-center tracking-tight;
+  }
+
+  .heading-display {
+    @apply font-display uppercase tracking-[0.18em];
+  }
+
+  .gradient-text {
+    background: linear-gradient(120deg, #ffffff 0%, #CBACF9 55%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
   }
 
   .black-gradient {
     background: linear-gradient(90deg, #161a31 0%, #06091f 100%);
+  }
+
+  .glow-purple {
+    box-shadow: 0 0 40px -10px rgba(203, 172, 249, 0.35);
   }
 }
 
@@ -143,4 +162,37 @@
 .animate-marquee-ltr:hover,
 .animate-marquee-rtl:hover {
   animation-play-state: paused;
+}
+
+/* Ambient purple glow behind the page — sits below all content. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(60rem 40rem at 50% -10%, rgba(203, 172, 249, 0.10), transparent 60%),
+    radial-gradient(40rem 30rem at 100% 20%, rgba(89, 73, 255, 0.06), transparent 70%);
+}
+
+/* Thin, on-brand scrollbar (WebKit). */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(203, 172, 249, 0.45), rgba(89, 73, 255, 0.55));
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(203, 172, 249, 0.7), rgba(89, 73, 255, 0.8));
+}
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(203, 172, 249, 0.5) transparent;
 }
