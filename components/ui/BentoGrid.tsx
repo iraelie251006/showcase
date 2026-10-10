@@ -73,17 +73,16 @@ export const BentoGridItem = ({
   return (
     <div
       className={cn(
-        "row-span-1 rounded-3xl relative overflow-hidden group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none px-2 justify-between flex flex-col space-y-4 border border-white-[0.1]",
+        "row-span-1 rounded-3xl relative overflow-hidden group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none px-2 justify-between flex flex-col space-y-4 border border-border dark:border-white/[0.1]",
         className
       )}
+      data-bento-id={id}
       style={{
-        background: 'rgb(4, 7, 29)',
-        backgroundColor:
-          "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
+        background: 'var(--portfolio-panel)',
       }}
     >
       <div className={`${id === 6  && 'flex justify-center'} h-full`}>
-        <div className="w-full h-full absolute">
+        <div className="portfolio-art w-full h-full absolute">
           {img && (
             <img 
             src={img} 
@@ -92,7 +91,7 @@ export const BentoGridItem = ({
             />
           )}
         </div>
-        <div className={`absolute right-0 -bottom-5 ${id === 5 && 'w-full opacity-80'}`}>
+        <div className={`portfolio-art absolute right-0 -bottom-5 ${id === 5 && 'w-full opacity-80'}`}>
           {spareImg && (
             <img 
              src={spareImg} 
@@ -102,17 +101,17 @@ export const BentoGridItem = ({
           )}
         </div>
         {id === 6 && (
-          <GradientBg>
+          <GradientBg containerClassName="portfolio-gradient">
             
           </GradientBg>
         )}
         
         <div className={cn(
           titleClassName,
-          'group-hover/bento: translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10'
+          'portfolio-bento-content group-hover/bento: translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10'
         )}>
-          <div className="group-hover/bento:translate-x-2 transition duration-200">
-            <div className="font-sans font-extralight text-[#c1c2d3] text-sm md:text-xs lg:text-base z-10">
+          <div className="portfolio-bento-copy group-hover/bento:translate-x-2 transition duration-200">
+            <div className="font-sans font-extralight text-muted-foreground dark:text-[#c1c2d3] text-sm md:text-xs lg:text-base z-10">
               {description}
             </div>
             <div className="font-sans font-bold text-lg lg:text-3xl max-w-96 z-10">
@@ -123,14 +122,14 @@ export const BentoGridItem = ({
             <div className="flex gap-1 lg:gap-2 w-fit absolute -right-3 lg:-right-2">
               <div className="flex flex-col gap-3 lg:gap-7">
                 {['Kubernetes', 'Docker', 'AWS'].map((item) => (
-                  <span key={item} className="py-2 lg:py-5 lg:px-3 px-3 text-xs lg:text-base opacity-50 rounded-lg text-center bg-[#10132E]">{item}</span>
+                  <span key={item} className="py-2 lg:py-5 lg:px-3 px-3 text-xs lg:text-base opacity-100 dark:opacity-50 rounded-lg text-center bg-[var(--portfolio-chip)]">{item}</span>
                 ))}
-                <span className="py-4 px-3 rounded-lg text-center bg-[#10132e]"/>
+                <span className="py-4 px-3 rounded-lg text-center bg-[var(--portfolio-chip)]"/>
               </div>
               <div className="flex flex-col gap-3 lg:gap-7">
-                <span className="py-4 px-3 rounded-lg text-center bg-[#10132a]"/>
+                <span className="py-4 px-3 rounded-lg text-center bg-[var(--portfolio-chip)]"/>
                 {['Spring Boot', 'Nginx', 'PostgreSQL'].map((item) => (
-                  <span key={item} className="py-2 lg:py-5 lg:px-3 px-3 text-xs lg:text-base opacity-50 rounded-lg text-center bg-[#10132E]">{item}</span>
+                  <span key={item} className="py-2 lg:py-5 lg:px-3 px-3 text-xs lg:text-base opacity-100 dark:opacity-50 rounded-lg text-center bg-[var(--portfolio-chip)]">{item}</span>
                 ))}
                 
               </div>
@@ -141,7 +140,7 @@ export const BentoGridItem = ({
                 <div className={`absolute -bottom-5 right-0`}>
                   <Lottie options={options}/>
                 </div>
-                <MagicButton title={copied ? 'Email Copied' : 'Copy My Email'} icon={<IoCopyOutline />} position="left" otherClasses="!bg-[#161a31]"
+                <MagicButton title={copied ? 'Email Copied' : 'Copy My Email'} icon={<IoCopyOutline />} position="left" otherClasses="dark:!bg-[#161a31]"
                 handleClick={() => handleCopy()}
                 />
               </div>
