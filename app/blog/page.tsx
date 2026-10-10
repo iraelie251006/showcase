@@ -23,7 +23,7 @@ export default function BlogIndexPage() {
       ) : (
         <ul className="space-y-8">
           {posts.map((post) => (
-            <li key={post.slug} className="border-b border-white/10 pb-8 last:border-b-0">
+            <li key={post.slug} className="border-b border-border dark:border-white/10 pb-8 last:border-b-0">
               <Link href={`/blog/${post.slug}`} className="group block">
                 <h2 className="text-2xl font-semibold group-hover:text-purple transition-colors">
                   {post.title}

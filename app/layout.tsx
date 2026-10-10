@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Orbitron } from "next/font/google";
 import "./globals.css";
+import ThemeToggle from "@/components/ThemeToggle";
 import { BuyMeCoffee } from "@/components/BuyMeCoffee";
 
 const geistSans = localFont({
@@ -90,6 +91,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             {children}
+            <ThemeToggle />
             <BuyMeCoffee />
           </ThemeProvider>
       </body>

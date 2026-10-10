@@ -54,7 +54,7 @@ export default async function PostPage({
         </div>
       </header>
 
-      <article className="prose prose-invert prose-lg max-w-none prose-headings:font-semibold prose-a:text-purple prose-a:no-underline hover:prose-a:underline prose-code:text-purple prose-pre:bg-black/40 prose-pre:border prose-pre:border-white/10">
+      <article className="prose dark:prose-invert prose-lg max-w-none prose-headings:font-semibold prose-a:text-purple prose-a:no-underline hover:prose-a:underline prose-code:text-purple prose-pre:bg-muted dark:prose-pre:bg-black/40 prose-pre:border prose-pre:border-border dark:prose-pre:border-white/10">
         <MDXRemote source={post.content} />
       </article>
     </main>

@@ -1,5 +1,4 @@
 import Clients from "@/components/Clients";
-import TechNura from "@/components/TechNura";
 import Experience from "@/components/Experience";
 import Footer from "@/components/Footer";
 import Grid from "@/components/Grid";
@@ -23,7 +22,6 @@ export default function Home() {
         <TechnologiesSection />
         <RecentProjects />
         <Clients />
-        <TechNura />
         <Experience />
         <Footer />
       </div>
