@@ -4,13 +4,16 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 40 20% 92%;
+    --portfolio-purple: 98 65 139;
+    --portfolio-panel: #e8e4ef;
+    --portfolio-chip: #ded9e8;
+    --foreground: 238 22% 20%;
 
-    --card: 0 0% 100%;
+    --card: 40 22% 95%;
     --card-foreground: 222.2 84% 4.9%;
 
-    --popover: 0 0% 100%;
+    --popover: 40 22% 95%;
     --popover-foreground: 222.2 84% 4.9%;
 
     --primary: 222.2 47.4% 11.2%;
@@ -19,8 +22,8 @@
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 260 14% 87%;
+    --muted-foreground: 238 12% 40%;
 
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
@@ -28,9 +31,9 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 260 16% 62%;
+    --input: 260 16% 62%;
+    --ring: 267 36% 40%;
 
     --radius: 0.5rem;
 
@@ -46,6 +49,9 @@
   }
 
   .dark {
+    --portfolio-purple: 203 172 249;
+    --portfolio-panel: rgb(4, 7, 29);
+    --portfolio-chip: #10132e;
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
 
@@ -195,4 +201,47 @@ body::before {
 html {
   scrollbar-width: thin;
   scrollbar-color: rgba(203, 172, 249, 0.5) transparent;
+}
+/* Muted warm stone and lavender surfaces keep light mode comfortable. */
+html.light body::before {
+  background: radial-gradient(60rem 40rem at 50% -10%, rgba(112, 83, 153, 0.08), transparent 60%),
+    radial-gradient(40rem 30rem at 100% 20%, rgba(112, 83, 153, 0.04), transparent 70%);
+}
+html.light .portfolio-art { opacity: 0.8; }
+/* White decorative SVG details need darker ink on a pale surface. */
+html.light [data-bento-id="4"] .portfolio-art,
+html.light [data-bento-id="5"] .portfolio-art {
+  opacity: 1;
+  filter: invert(1) hue-rotate(180deg) contrast(1.2);
+}
+/* Keep the laptop vivid, with a soft reading surface behind the caption. */
+html.light [data-bento-id="1"] .portfolio-bento-content {
+  background: linear-gradient(to top, #e8e4ef 0%, rgba(232, 228, 239, 0.96) 28%, transparent 65%);
+}
+html.light [data-bento-id="5"] .portfolio-bento-content {
+  background: linear-gradient(110deg, rgba(232, 228, 239, 0.35), transparent);
+}
+html.light .portfolio-gradient { opacity: 0.5; filter: saturate(0.55) brightness(1.2); }
+html.light .portfolio-spotlights { opacity: 0.15; }
+html.light .social-icon { filter: brightness(0.35); }
+html.light { scrollbar-color: #8a789f transparent; }
+html.light ::-webkit-scrollbar-thumb { background: #8a789f; }
+:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 4px; }
+
+html.light [data-bento-id="1"] .portfolio-bento-copy {
+  background: rgba(232, 228, 239, 0.95);
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 4px 20px rgba(40, 30, 60, 0.06);
+}
+html.light [data-bento-id="5"] .portfolio-bento-copy {
+  background: rgba(232, 228, 239, 0.92);
+  border-radius: 1rem;
+  padding: 0.75rem;
+}
+@media (max-width: 767px) {
+  html.light [data-bento-id="5"] .portfolio-bento-content {
+    min-height: 22rem;
+    justify-content: flex-start;
+  }
 }
