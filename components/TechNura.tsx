@@ -57,7 +57,7 @@ const TechNura = () => {
           {capabilities.map(({ icon: Icon, title, description, stack }) => (
             <article
               key={title}
-              className="group relative overflow-hidden rounded-xl border border-white/10 bg-black-200 p-6 transition-all duration-300 hover:border-purple/50 hover:-translate-y-0.5"
+              className="group relative overflow-hidden rounded-xl border border-border dark:border-white/10 bg-card dark:bg-black-200 p-6 transition-all duration-300 hover:border-purple/50 hover:-translate-y-0.5"
             >
               <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-[radial-gradient(40rem_20rem_at_50%_-20%,rgba(203,172,249,0.18),transparent_60%)]" />
               <div className="relative flex flex-col gap-4">
@@ -65,18 +65,18 @@ const TechNura = () => {
                   <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-purple/30 bg-purple/10 text-purple">
                     <Icon className="h-5 w-5" />
                   </span>
-                  <h3 className="font-display text-base uppercase tracking-[0.16em] text-white">
+                  <h3 className="font-display text-base uppercase tracking-[0.16em] text-foreground dark:text-white">
                     {title}
                   </h3>
                 </div>
-                <p className="text-sm font-light text-white-200 leading-relaxed">
+                <p className="text-sm font-light text-muted-foreground dark:text-white-200 leading-relaxed">
                   {description}
                 </p>
                 <ul className="flex flex-wrap gap-2 pt-1">
                   {stack.map((tech) => (
                     <li
                       key={tech}
-                      className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-wider text-white-100"
+                      className="rounded-full border border-border dark:border-white/10 bg-muted/50 dark:bg-white/5 px-3 py-1 text-[11px] uppercase tracking-wider text-muted-foreground dark:text-white-100"
                     >
                       {tech}
                     </li>
