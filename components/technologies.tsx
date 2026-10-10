@@ -39,14 +39,14 @@ export default function TechnologiesSection() {
       {skillGroups.map((group, index) => (
         <div key={index} style={{ opacity: 1, transform: 'none' }}>
           <h3 className="flex justify-center">{group.title}</h3>
-          <ul 
-            className="border border-gray-200 dark:border-gray-700 p-2 rounded-2xl bg-transparent sm:bg-white/50 dark:sm:bg-slate-800/50 gap-2 flex flex-wrap max-w-[20.1rem] justify-center" 
+          <ul
+            className="border border-border dark:border-gray-700 p-2 rounded-2xl bg-transparent sm:bg-card dark:sm:bg-slate-800/50 gap-2 flex flex-wrap max-w-[20.1rem] justify-center"
             style={{ opacity: 1 }}
           >
             {group.skills.map((skill, skillIndex) => (
-              <li 
+              <li
                 key={skillIndex}
-                className="flex flex-col gap-4 justify-center items-center text-center border border-gray-200 dark:border-gray-700 rounded-lg p-2 size-24 sm:size-24 text-sm sm:text-base bg-white/50 sm:bg-sky-50 dark:bg-slate-800/20 dark:sm:bg-slate-800/30"
+                className="flex flex-col gap-4 justify-center items-center text-center border border-border dark:border-gray-700 rounded-lg p-2 size-24 sm:size-24 text-sm sm:text-base bg-card sm:bg-card dark:bg-slate-800/20 dark:sm:bg-slate-800/30"
               >
                 <Image
                   draggable="false"
