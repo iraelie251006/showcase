@@ -1,7 +1,6 @@
 import { ThemeProvider } from "@/components/theme-provider"
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Orbitron } from "next/font/google";
 import "./globals.css";
 import ThemeToggle from "@/components/ThemeToggle";
 import { BuyMeCoffee } from "@/components/BuyMeCoffee";
@@ -16,10 +15,10 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
-const orbitron = Orbitron({
-  subsets: ["latin"],
+const orbitron = localFont({
+  src: "./fonts/OrbitronVariable.ttf",
   variable: "--font-display",
-  weight: ["500", "600", "700", "800"],
+  weight: "400 900",
   display: "swap",
 });
 
