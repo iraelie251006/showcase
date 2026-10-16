@@ -245,3 +245,10 @@ html.light [data-bento-id="5"] .portfolio-bento-copy {
     justify-content: flex-start;
   }
 }
+
+/* Rich-text editing shares the public article typography. */
+.tiptap:focus { outline: none; }
+.tiptap p.is-editor-empty:first-child::before { color: hsl(var(--muted-foreground)); }
+.tiptap pre { white-space: pre-wrap; }
+.tiptap img { max-width: 100%; height: auto; }
+.tiptap .ProseMirror-selectednode { outline: 2px solid rgb(var(--portfolio-purple)); outline-offset: 3px; }
