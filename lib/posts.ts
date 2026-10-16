@@ -54,6 +54,7 @@ export function getAllPosts(): PostMeta[] {
 }
 
 export function getPostBySlug(slug: string): Post | null {
+  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) return null;
   try {
     return readPostFile(slug);
   } catch {
