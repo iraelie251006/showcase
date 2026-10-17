@@ -1,16 +1,20 @@
 import Link from "next/link";
-import { getAllPosts } from "@/lib/posts";
+/* eslint-disable @next/next/no-img-element */
+import { getPublicPosts } from "@/lib/blog/public";
+
+export const dynamic = "force-dynamic";
 
 export const metadata = {
   title: "Blog",
   description: "Notes on projects, debugging, and the tools I use.",
 };
 
-export default function BlogIndexPage() {
-  const posts = getAllPosts();
+export default async function BlogIndexPage() {
+  const posts = await getPublicPosts();
 
   return (
     <main className="mx-auto max-w-3xl px-4 py-24 md:py-32">
+      <Link href="/" className="mb-8 inline-block text-sm text-muted-foreground hover:text-foreground">← Back to portfolio</Link>
       <header className="mb-12">
         <h1 className="text-4xl font-bold md:text-5xl">Blog</h1>
         <p className="text-muted-foreground mt-3 text-base md:text-lg">
@@ -25,6 +29,7 @@ export default function BlogIndexPage() {
           {posts.map((post) => (
             <li key={post.slug} className="border-b border-border dark:border-white/10 pb-8 last:border-b-0">
               <Link href={`/blog/${post.slug}`} className="group block">
+                {post.cover && <img src={post.cover} alt={post.coverAlt} loading="lazy" className="mb-5 aspect-video w-full rounded-xl object-cover" />}
                 <h2 className="text-2xl font-semibold group-hover:text-purple transition-colors">
                   {post.title}
                 </h2>
