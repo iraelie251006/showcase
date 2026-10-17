@@ -2,6 +2,7 @@
 
 import { Coffee, Heart } from "lucide-react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 interface BuyMeCoffeeBadgeProps {
   href?: string
@@ -43,6 +44,8 @@ export default function BuyMeCoffeeBadge({
 
 // Example usage component
 export function BuyMeCoffee() {
+  const pathname = usePathname();
+  if (pathname === "/admin" || pathname.startsWith("/admin/")) return null;
   return (
         <div className="space-y-4 fixed bottom-4 right-4 z-50 p-4">
           <div className="flex flex-wrap gap-4">
