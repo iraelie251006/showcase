@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { getAllPostSlugs, getPostBySlug } from "@/lib/posts";
+/* eslint-disable @next/next/no-img-element */
+import { getPublicPost } from "@/lib/blog/public";
+import ArticleContent from "@/components/blog/ArticleContent";
 
-export function generateStaticParams() {
-  return getAllPostSlugs().map((slug) => ({ slug }));
-}
+export const dynamic = "force-dynamic";
+
 
 export async function generateMetadata({
   params,
@@ -13,7 +14,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = await getPublicPost(slug);
   if (!post) return {};
   return {
     title: post.title,
@@ -27,7 +28,7 @@ export default async function PostPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = await getPublicPost(slug);
   if (!post) notFound();
 
   return (
@@ -39,6 +40,7 @@ export default async function PostPage({
         ← Back to blog
       </Link>
 
+      {post.cover && <img src={post.cover} alt={post.coverAlt} className="mb-8 aspect-video w-full rounded-2xl object-cover" />}
       <header className="mb-10">
         <h1 className="text-4xl font-bold leading-tight md:text-5xl">{post.title}</h1>
         <div className="text-muted-foreground mt-4 flex flex-wrap gap-x-3 gap-y-1 text-xs">
@@ -54,9 +56,9 @@ export default async function PostPage({
         </div>
       </header>
 
-      <article className="prose dark:prose-invert prose-lg max-w-none prose-headings:font-semibold prose-a:text-purple prose-a:no-underline hover:prose-a:underline prose-code:text-purple prose-pre:bg-muted dark:prose-pre:bg-black/40 prose-pre:border prose-pre:border-border dark:prose-pre:border-white/10">
+      {post.format === "rich" ? <ArticleContent content={post.content} /> : <article className="prose dark:prose-invert prose-lg max-w-none prose-headings:font-semibold prose-a:text-purple prose-a:no-underline hover:prose-a:underline prose-code:text-purple prose-pre:bg-muted dark:prose-pre:bg-black/40 prose-pre:border prose-pre:border-border dark:prose-pre:border-white/10">
         <MDXRemote source={post.content} />
-      </article>
+      </article>}
     </main>
   );
 }
