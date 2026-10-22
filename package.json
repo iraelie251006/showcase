@@ -9,7 +9,8 @@
     "lint": "next lint",
     "admin:create": "node --env-file-if-exists=.env.local scripts/create-admin.mjs",
     "test:auth": "node --test tests/admin-password.test.mjs",
-    "test:blog": "node --test tests/blog-content.test.mjs"
+    "test:blog": "node --test tests/blog-content.test.mjs tests/linkedin-drafts.test.mjs",
+    "blog:import-linkedin": "node --env-file-if-exists=.env.local scripts/import-linkedin-drafts.mjs"
   },
   "packageManager": "npm@10.9.2",
   "overrides": {
